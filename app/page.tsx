@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Button from "@/components/Button";
 import Link from "next/link";
-import { useRouter } from 'next/navigation'; // Use next/navigation in app directory
+import { useRouter } from 'next/navigation'; 
 
 export default function Home() {
   const router = useRouter(); // useRouter from next/navigation
@@ -54,7 +54,7 @@ export default function Home() {
       console.log("Form submitted successfully:", formData);
 
       // Redirect to the login page
-      router.push('/Login'); // Redirect to login page after successful submission
+      router.push('/Login'); 
     }
   };
 

@@ -1,9 +1,58 @@
+"use client"
 import Button from "@/components/Button";
 import Image from "next/image";
 import '../styles/login.css';
 import Link from "next/link";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+
+
 
 export default function Home() {
+    const router = useRouter();
+
+const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+});
+
+const [errors, setErrors] = useState({
+    email: "",
+    password: "",
+});
+//for form data changes
+const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+   // Handle form submission and validation
+   const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // Basic validation
+    const newErrors = {
+      email:
+        /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(formData.email)
+          ? ""
+          : "Please enter a valid email address.",
+      password:
+        formData.password.length >= 6 ? "" : "Password must be at least 6 characters.",
+    };
+
+    setErrors(newErrors);
+
+    // If there are no errors, proceed with form submission
+    if (!newErrors.email && !newErrors.password) {
+      console.log("Form submitted successfully:", formData);
+      router.push('/Blog')
+    }
+  };
+
+
   return (
     <div className="min-h-screen bg-cover bg-no-repeat bg-fixed sm:bg-auto md:bg-cover lg:bg-cover sm:bg-top md:bg-center"
       style={{
@@ -26,8 +75,8 @@ export default function Home() {
 
           <p className="mb-2 text-sm text-gray-400">WELCOME BACK</p>
           <h1 className="text-sm font-bold mb-6">Login in to your Account</h1>
-          <form className="space-y-4">
-           
+          <form  onSubmit={handleSubmit} className="space-y-4">
+           <div>
             <label
               className="block text-sm font-medium text-gray-500"
               htmlFor="Email"
@@ -35,12 +84,19 @@ export default function Home() {
               Email
             </label>
             <input
-              id="Email"
+              id="email"
               type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
               placeholder="Enter your Email"
               className="mt-1 block w-full px-4 py-2 rounded-lg border-2 border-gray-300"
             />
+              {errors.email && <p className="text-red-500 text-xs">{errors.email}</p>}
+</div>
 
+
+<div>
             <label
               className="block text-sm font-medium text-gray-500"
               htmlFor="Password"
@@ -50,9 +106,14 @@ export default function Home() {
             <input
               id="Password"
               type="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
               placeholder="Enter your password"
               className="mt-1 block w-full px-4 py-2 rounded-lg border-2 border-gray-300"
             />
+            {errors.password && <p className="text-red-500 text-xs">{errors.password}</p>}
+            </div>
            
            <div className="py-4 flex justify-between items-center w-full">
   <div className="flex items-center space-x-2">
@@ -69,7 +130,7 @@ export default function Home() {
 
 
             <Button
-              type="Button"
+              type="submit"
               title="CONTINUE"
               icon="/user.svg"
               variant="btn_black"
