@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar';
 import { useEffect, useState } from 'react';
+import Footer from '@/components/Footer';
 
 const Edit = () => {
   const [blogs, setBlogs] = useState<string[]>([]);
@@ -70,6 +71,7 @@ const Edit = () => {
           <p className="text-gray-500">No blogs available. Add one to get started!</p>
         )}
       </div>
+      <Footer />
     </div>
   );
 };

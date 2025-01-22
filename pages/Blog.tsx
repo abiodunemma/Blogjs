@@ -1,4 +1,5 @@
 import Button from '@/components/Button';
+import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
@@ -38,7 +39,8 @@ const Blog = () => {
   };
 
   return (
-    <div>
+    <div className='  h-full'>
+
       <Navbar />
       <div className="py-20 px-4">
         <div className="flex items-center py-4">
@@ -66,7 +68,9 @@ const Blog = () => {
           <Button type="submit" title="Tell the World" variant="btn_black" />
         </form>
       </div>
+      <Footer />
     </div>
+
   );
 };
 

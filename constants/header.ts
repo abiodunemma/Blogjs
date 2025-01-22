@@ -1,8 +1,8 @@
 // NAVIGATION
 export const NAV_LINKS = [
-    {href: '/', key: 'home', label: 'Home'},
-    {href: '/', key: 'Nextjs', label: 'Nextjs'},
-    {href: '/', key: 'services', label: 'Services'},
-    {href: '/', key: 'profile', label: 'Profile'},
+    {href: '/Blog', key: 'home', label: 'Home'},
+    {href: '/Edit', key: 'Nextjs', label: 'Edit Blog'},
+    {href: '/Login', key: 'services', label: 'Login'},
+    {href: '/', key: 'profile', label: 'Petrong'},
     {href: '/', key: 'contact_us', label: 'Contact Us'},
 ]
