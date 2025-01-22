@@ -1,9 +1,10 @@
-import Button from '@/components/Button';
+
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+import Button from '@/components/Button';
 
 const Blog = () => {
   const router = useRouter();
@@ -39,10 +40,11 @@ const Blog = () => {
   };
 
   return (
-    <div className='flex flex-col min-h-screen'>
+    <div className='min-h-screen '>
 
       <Navbar />
-      <div className="flex-grow py-20 px-4">
+<div className='flex flex-col min-h-screen'>
+      <div className=" flex-glow py-20 px-4">
         <div className="flex items-center py-4">
           <Image
             src="/person-2.png"
@@ -69,7 +71,10 @@ const Blog = () => {
         </form>
       </div>
       <Footer />
-    </div>
+
+      </div>
+      </div>
+
 
   );
 };
