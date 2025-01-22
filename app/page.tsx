@@ -70,7 +70,7 @@ export default function Home() {
         </div>
 
         {/* Right Section */}
-        <div className="flex-1 bg-white rounded-lg p-6 md:max-w-md w-4/5 h-auto mx-auto">
+        <div className="flex-1 bg-white rounded-lg p-6 md:max-w-md  h-4/5 mx-auto mt-5 sm:mt-12  sm:h-4/5 w-11/12">
           <p className="mb-2 text-sm">Let’s get you started</p>
           <h1 className="text-lg font-bold mb-6">Create an Account</h1>
           <form onSubmit={handleSubmit} className="space-y-4">

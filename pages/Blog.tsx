@@ -39,10 +39,10 @@ const Blog = () => {
   };
 
   return (
-    <div className='  h-full'>
+    <div className='flex flex-col min-h-screen'>
 
       <Navbar />
-      <div className="py-20 px-4">
+      <div className="flex-grow py-20 px-4">
         <div className="flex items-center py-4">
           <Image
             src="/person-2.png"

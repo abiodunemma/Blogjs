@@ -38,9 +38,9 @@ const Edit = () => {
   };
 
   return (
-    <div>
+    <div className='flex flex-col min-h-screen'>
       <Navbar />
-      <div className="py-20 px-4">
+      <div className=" flex-grow py-20 px-4">
         <h1 className="text-2xl font-bold mb-6">Manage Blogs</h1>
         {blogs.length > 0 ? (
           <div className="space-y-4">
