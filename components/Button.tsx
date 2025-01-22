@@ -1,10 +1,10 @@
 import Image from 'next/image'
 
 type ButtonProps = {
-    type: 'button' | 'submit';
+    type: 'button' | 'submit' | 'reset';
     title: string;
     icon?: string;
-    variant: string;
+    variant: 'btn_black' | 'btn_white' | 'btn_red' | 'btn_blue' | 'default';
 }
 
 const Button = ({ type, title, icon, variant }: ButtonProps) => {
